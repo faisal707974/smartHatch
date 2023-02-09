@@ -1,0 +1,166 @@
+$green :#0D7B58;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.Home {
+    display: flex;
+
+    .navigation-bar {
+        width: 18%;
+
+        nav {
+            background-color: $green;
+            color: white;
+            height: 80vh;
+            font-size: 14pt;
+            overflow: hidden;
+            padding: 20px 10px;
+
+            li {
+                margin: 10px 0;
+                cursor: pointer;
+                user-select: none;
+                transition-property: border, font-weight .5s ease-in-out;
+
+                &.selected {
+                    font-weight: bolder;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+    }
+
+    .content {
+        flex-grow: 7;
+        flex-shrink: 0;
+
+        header {
+            height: 8vh;
+            border-bottom: 1px solid $green;
+        }
+
+        main {
+            background-color: hsl(0, 0%, 90%);
+            height: 92vh;
+            overflow: hidden;
+
+            .news {
+                button.add-news {
+                    display: block;
+                    margin: 10px 50px 0 auto;
+                    border-radius: 100px;
+                    border: none;
+                    background-color: $green;
+                    color: white;
+                    padding: 5px 25px;
+                }
+
+                .insert-news form {
+                    margin: 20px;
+                    display: flex;
+                    gap: 15px;
+
+                    section.general-form {
+
+                        display: grid;
+                        gap: 15px;
+                        grid-template-columns: repeat(3, 230px);
+
+                        label {
+                            color: $green;
+                            font-weight: bold;
+                        }
+
+                        input,
+                        textarea {
+                            width: 100%;
+                            border-radius: 10px;
+                            border: none;
+                            padding: 10px;
+
+                            &:focus {
+                                outline-color: $green;
+                            }
+                        }
+
+                        input {
+                            height: 40px;
+
+                        }
+
+                        label[for="title"] {
+                            grid-column: 1 / span 3;
+                        }
+
+                        label[for="desc"] {
+                            grid-column: 1 / span 3;
+                        }
+                    }
+
+                    section.images-form {
+                        width: 300px;
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            color: $green;
+                            font-weight: bold;
+                        }
+
+                        .images-display {
+                            border: 2px dashed lighten($color: $green, $amount: 15%);
+                            background-color: white;
+                            border-radius: 10px;
+                            min-height: 50px;
+                            margin-bottom: 10px;
+
+                            &:first-of-type {
+                                flex-grow: 1;
+                            }
+
+                            &:last-of-type {
+                                flex-grow: 5;
+                            }
+
+                            .file-upload-button {
+                                background-color: $green;
+                                color: white;
+                                border-radius: 50%;
+                                width: 26px;
+                                aspect-ratio: 1 / 1;
+                                margin: 10px;
+                                cursor: pointer;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                span {
+                                    position: absolute;
+                                    top: -1px;
+                                }
+                            }
+                        }
+
+                        button {
+                            border: none;
+                            background-color: $green;
+                            color: white;
+                            font-weight: bold;
+                            border-radius: 10px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
