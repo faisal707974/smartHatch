@@ -1,0 +1,176 @@
+$green :#0D7B58;
+
+.News {
+    button.add-news {
+        display: block;
+        margin: 10px 50px 0 auto;
+        border-radius: 100px;
+        border: none;
+        background-color: $green;
+        color: white;
+        padding: 5px 25px;
+    }
+
+    .show-news {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+        padding-bottom: 150px;
+
+        article {
+            background-color: white;
+            width: 50%;
+            border-radius: 15px;
+            padding: 25px;
+            transition: box-shadow .2s ease-in;
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 5px 1px;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+
+                i img {
+                    width: 18px;
+                    cursor: pointer;
+
+                }
+            }
+        }
+    }
+
+    .go-back {
+        cursor: pointer;
+    }
+
+    .insert-news .wrapper {
+        margin: 15px;
+        display: flex;
+        gap: 15px;
+
+        section.general-form {
+
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(3, 230px);
+
+            label {
+                color: $green;
+                font-weight: bold;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                border-radius: 10px;
+                border: none;
+                padding: 10px;
+
+                &:focus {
+                    outline-color: $green;
+                }
+            }
+
+            input {
+                height: 40px;
+
+            }
+
+            label[for="title"] {
+                grid-column: 1 / span 3;
+            }
+
+            label[for="desc"] {
+                grid-column: 1 / span 3;
+            }
+        }
+
+        section.images-form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: $green;
+                font-weight: bold;
+            }
+
+            .images-display {
+                border: 2px dashed lighten($color: $green, $amount: 15%);
+                background-color: white;
+                border-radius: 10px;
+                min-height: 50px;
+                margin-bottom: 10px;
+                overflow: auto;
+
+                &:first-of-type {
+                    height: 125px;
+                }
+
+                &:last-of-type {
+                    height: 280px;
+                }
+
+                .file-upload-button {
+                    background-color: $green;
+                    color: white;
+                    border-radius: 50%;
+                    width: 26px;
+                    aspect-ratio: 1 / 1;
+                    margin: 10px;
+                    cursor: pointer;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    span {
+                        position: absolute;
+                        top: -1px;
+                    }
+                }
+
+                .image-span {
+                    position: relative;
+                    display: block;
+
+                    img {
+                        height: 100px;
+                        margin: 15px;
+                    }
+
+                    i {
+                        position: absolute;
+                        left: 10px;
+                        top: 1px;
+                        font-style: normal;
+                        background-color: black;
+                        color: white;
+                        padding: 1px 5px;
+                        aspect-ratio: 1 / 1;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            button {
+                border: none;
+                background-color: $green;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                height: 40px;
+            }
+        }
+    }
+}

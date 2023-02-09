@@ -1,11 +1,11 @@
 $green :#0D7B58;
-body{
-    margin: 0;
-    padding: 0;
-}
 
 ul {
     list-style: none;
+}
+
+p {
+    margin: 0;
 }
 
 .Home {
@@ -17,7 +17,7 @@ ul {
         nav {
             background-color: $green;
             color: white;
-            height: 80vh;
+            height: 100vh;
             font-size: 14pt;
             overflow: hidden;
             padding: 20px 10px;
@@ -48,119 +48,20 @@ ul {
         main {
             background-color: hsl(0, 0%, 90%);
             height: 92vh;
-            overflow: hidden;
-
-            .news {
-                button.add-news {
-                    display: block;
-                    margin: 10px 50px 0 auto;
-                    border-radius: 100px;
-                    border: none;
-                    background-color: $green;
-                    color: white;
-                    padding: 5px 25px;
-                }
-
-                .insert-news form {
-                    margin: 20px;
-                    display: flex;
-                    gap: 15px;
-
-                    section.general-form {
-
-                        display: grid;
-                        gap: 15px;
-                        grid-template-columns: repeat(3, 230px);
-
-                        label {
-                            color: $green;
-                            font-weight: bold;
-                        }
-
-                        input,
-                        textarea {
-                            width: 100%;
-                            border-radius: 10px;
-                            border: none;
-                            padding: 10px;
-
-                            &:focus {
-                                outline-color: $green;
-                            }
-                        }
-
-                        input {
-                            height: 40px;
-
-                        }
-
-                        label[for="title"] {
-                            grid-column: 1 / span 3;
-                        }
-
-                        label[for="desc"] {
-                            grid-column: 1 / span 3;
-                        }
-                    }
-
-                    section.images-form {
-                        width: 300px;
-                        display: flex;
-                        flex-direction: column;
-
-                        label {
-                            color: $green;
-                            font-weight: bold;
-                        }
-
-                        .images-display {
-                            border: 2px dashed lighten($color: $green, $amount: 15%);
-                            background-color: white;
-                            border-radius: 10px;
-                            min-height: 50px;
-                            margin-bottom: 10px;
-
-                            &:first-of-type {
-                                flex-grow: 1;
-                            }
-
-                            &:last-of-type {
-                                flex-grow: 5;
-                            }
-
-                            .file-upload-button {
-                                background-color: $green;
-                                color: white;
-                                border-radius: 50%;
-                                width: 26px;
-                                aspect-ratio: 1 / 1;
-                                margin: 10px;
-                                cursor: pointer;
-                                position: relative;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                span {
-                                    position: absolute;
-                                    top: -1px;
-                                }
-                            }
-                        }
-
-                        button {
-                            border: none;
-                            background-color: $green;
-                            color: white;
-                            font-weight: bold;
-                            border-radius: 10px;
-                            height: 40px;
-                        }
-                    }
-                }
-            }
+            overflow: auto;
         }
     }
 
+    .notification {
+        position: absolute;
+        bottom: 25px;
+        right: 50px;
+        width: fit-content;
+        background-color: white;
+        color: $green;
+        padding: 10px 50px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px 1px gray;
 
+    }
 }
