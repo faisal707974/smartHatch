@@ -3,7 +3,14 @@ import './index.scss'
 
 import Component from '../../components/SampleComponent'
 
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux/es/exports'
+import { stopPopUpAction } from '../../redux/actions/popUpActions'
+
 export default function Index() {
+
+    const dispatch = useDispatch()
+    const state = useSelector((state) => state.popUp)
 
     const [notification, setNotification] = useState('')
     const [page, setPage] = useState(1)
@@ -12,6 +19,7 @@ export default function Index() {
 
     function notificationHandle(text) {
         setNotification(text)
+        dispatch(stopPopUpAction(text))
         setTimeout(() => {
             setNotification('')
         }, 2000);
